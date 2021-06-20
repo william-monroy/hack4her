@@ -11,7 +11,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
 import SocialButton from '../components/SocialButton';
-import {AuthContext} from '../navigation/AuthProvider';
+//import {AuthContext} from '../navigation/AuthProvider';
 
 
 const SignupScreen = ({navigation}) => {
@@ -19,8 +19,6 @@ const SignupScreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [confirmPassword, setConfirmPassword] = useState();
-
-    const {register} = useContext(AuthContext);
 
     return ( 
         <View style={styles.container}>
@@ -54,7 +52,7 @@ const SignupScreen = ({navigation}) => {
 
             <FormButton
                 buttonTitle="Sign Up"
-                onPress={() => register(email, password)}
+                onPress={() => alert('Signup Clicked')}
             />
 
             <View style={styles.textPrivate}>
