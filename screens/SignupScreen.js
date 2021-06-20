@@ -14,19 +14,15 @@ import SocialButton from '../components/SocialButton';
 //import {AuthContext} from '../navigation/AuthProvider';
 
 
-const LoginScreen = ({navigation}) => {
+const SignupScreen = ({navigation}) => {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
+    const [confirmPassword, setConfirmPassword] = useState();
 
     return ( 
         <View style={styles.container}>
-            <Image
-                source={require('../assets/rn-social-logo.png')}
-                style={styles.logo}
-            />
-            <Text style={styles.text}>RN Social App</Text>
+            <Text style={styles.text}>Create an Account</Text>
 
             <FormInput
                 labelValue={email}
@@ -46,14 +42,34 @@ const LoginScreen = ({navigation}) => {
                 secureTextEntry={true}
             />
 
-            <FormButton
-                buttonTitle="Sign In"
-                onPress={() => alert('login')}
+            <FormInput 
+                labelValue={confirmPassword}
+                onChangeText={(userPassword) => setPassword(userPassword)}
+                placeholderText="Confirm Password"
+                iconType="lock"
+                secureTextEntry={true}
             />
 
-            <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
-                <Text style={styles.navButtonText}>Forgot Password?</Text>
-            </TouchableOpacity>
+            <FormButton
+                buttonTitle="Sign Up"
+                onPress={() => alert('Signup Clicked')}
+            />
+
+            <View style={styles.textPrivate}>
+                <Text style={styles.color_textPrivate}>
+                By registering, you confirm that you accept our{' '}
+                </Text>
+                <TouchableOpacity onPress={() => alert('Terms Clicked!')}>
+                <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+                    Terms of service
+                </Text>
+                </TouchableOpacity>
+                <Text style={styles.color_textPrivate}> and </Text>
+                <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+                Privacy Policy
+                </Text>
+            </View>
+
 
             {Platform.OS === 'android' ? (
                 <View>
@@ -76,17 +92,17 @@ const LoginScreen = ({navigation}) => {
             ) : null}
 
             <TouchableOpacity
-                style={styles.forgotButton}
-                onPress={() => navigation.navigate('Signup')}>
+                style={styles.navButton}
+                onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.navButtonText}>
-                Don't have an acount? Create here
+                Have an acount? Sign In
                 </Text>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default LoginScreen;
+export default SignupScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -94,11 +110,6 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 20,
       paddingTop: 50
-    },
-    logo: {
-      height: 150,
-      width: 150,
-      resizeMode: 'cover',
     },
     text: {
       fontFamily: 'Kufam-SemiBoldItalic',
@@ -108,9 +119,6 @@ const styles = StyleSheet.create({
     },
     navButton: {
       marginTop: 15,
-    },
-    forgotButton: {
-      marginVertical: 35,
     },
     navButtonText: {
       fontSize: 18,
