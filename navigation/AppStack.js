@@ -77,7 +77,7 @@ const AppStack = () => {
             name="Home"
             component={FeedStack}
             options={{
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Inicio',
                 tabBarIcon: ({color, size}) => (
                     <MaterialCommunityIcons
                     name="home-outline"
@@ -91,7 +91,7 @@ const AppStack = () => {
                 name="Messages"
                 component={ChatScreen}
                 options={{
-                    // tabBarLabel: 'Home',
+                    tabBarLabel: 'Mensajes',
                 tabBarIcon: ({color, size}) => (
                 <Ionicons
                 name="chatbox-ellipses-outline"
@@ -105,7 +105,7 @@ const AppStack = () => {
                 name="Profile"
                 component={ProfileScreen}
                 options={{
-                // tabBarLabel: 'Home',
+                  tabBarLabel: 'Perfil',
                 tabBarIcon: ({color, size}) => (
                     <Ionicons name="person-outline" color={color} size={size} />
                 ),

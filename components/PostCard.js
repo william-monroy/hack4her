@@ -50,7 +50,6 @@ const PostCard = ({item}) => {
             </UserInfo> 
             <PostText>{item.post}</PostText>
             {item.postImg != 'none' ? <PostImg source={item.postImg}/> : <Divider/>}
-            <Divider />
             <InteractionWrapper>
                 <Interaction active={item.liked}>
                     <Ionicons name={likeIcon} size={25} color={likeIconColor} />

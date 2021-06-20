@@ -1,10 +1,35 @@
-import React, {useContext} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import React from 'react';
+import {View, Text, Button, StyleSheet} from 'react-native';
+import { InputField, InputWrapper } from '../styles/AddPost';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const AddPostScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Add Post Screen</Text>
+            <InputWrapper>
+                <InputField 
+                    placeholder="¿Qué estas buscando?"
+                    multiline
+                    numberOfLines={4}
+                />
+            </InputWrapper>
+            <ActionButton buttonColor="#2e64e5">
+                <ActionButton.Item
+                    buttonColor="#9b59b6"
+                    title="Take Photo"
+                    onPress={()=>alert("Take Photo")}
+                >
+                <Icon name="camera-outline" style={styles.actionButtonIcon} />
+                </ActionButton.Item>
+                <ActionButton.Item
+                    buttonColor="#3498db"
+                    title="Choose Photo"
+                    onPress={()=>alert("Please select")}
+                >
+                <Icon name="md-images-outline" style={styles.actionButtonIcon} />
+                </ActionButton.Item>
+            </ActionButton>
         </View>
     )
 }
@@ -20,8 +45,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
     },
-    text: {
+    actionButtonIcon: {
         fontSize: 20,
-        color: '#333333'
+        height: 22,
+        color: 'white',
     }
 })
