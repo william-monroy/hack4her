@@ -24,10 +24,10 @@ const LoginScreen = ({navigation}) => {
     return ( 
         <View style={styles.container}>
             <Image
-                source={require('../assets/rn-social-logo.png')}
+                source={require('../assets/logo.png')}
                 style={styles.logo}
             />
-            <Text style={styles.text}>RN Social App</Text>
+            <Text style={styles.text}>Equipo 17</Text>
 
             <FormInput
                 labelValue={email}
@@ -48,7 +48,7 @@ const LoginScreen = ({navigation}) => {
             />
 
             <FormButton
-                buttonTitle="Sign In"
+                buttonTitle="Iniciar Sesión"
                 onPress={() => {
                     try {
                         login(email, password)
@@ -59,13 +59,13 @@ const LoginScreen = ({navigation}) => {
             />
 
             <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
-                <Text style={styles.navButtonText}>Forgot Password?</Text>
+                <Text style={styles.navButtonText}>¿Olvidaste la contraseña?</Text>
             </TouchableOpacity>
 
             {Platform.OS === 'android' ? (
                 <View>
                 <SocialButton
-                    buttonTitle="Sign In with Facebook"
+                    buttonTitle="Iniciar Sesión con Facebook"
                     btnType="facebook"
                     color="#4867aa"
                     backgroundColor="#e6eaf4"
@@ -73,7 +73,7 @@ const LoginScreen = ({navigation}) => {
                 />
 
                 <SocialButton
-                    buttonTitle="Sign In with Google"
+                    buttonTitle="Iniciar Sesión con Google"
                     btnType="google"
                     color="#de4d41"
                     backgroundColor="#f5e7ea"
@@ -86,7 +86,7 @@ const LoginScreen = ({navigation}) => {
                 style={styles.forgotButton}
                 onPress={() => navigation.navigate('Signup')}>
                 <Text style={styles.navButtonText}>
-                Don't have an acount? Create here
+                ¿No tienes una cuenta? Crea una
                 </Text>
             </TouchableOpacity>
         </View>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     },
     logo: {
       height: 150,
-      width: 150,
+      width: 200,
       resizeMode: 'cover',
     },
     text: {

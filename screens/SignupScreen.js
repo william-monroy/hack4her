@@ -21,10 +21,10 @@ const SignupScreen = ({navigation}) => {
     const [confirmPassword, setConfirmPassword] = useState();
 
     const {register} = useContext(AuthContext);
-    
+
     return ( 
         <View style={styles.container}>
-            <Text style={styles.text}>Create an Account</Text>
+            <Text style={styles.text}>Crea una cuenta</Text>
 
             <FormInput
                 labelValue={email}
@@ -47,7 +47,7 @@ const SignupScreen = ({navigation}) => {
             <FormInput 
                 labelValue={confirmPassword}
                 onChangeText={(userPassword) => setPassword(userPassword)}
-                placeholderText="Confirm Password"
+                placeholderText="Confirma el Password"
                 iconType="lock"
                 secureTextEntry={true}
             />
@@ -59,16 +59,16 @@ const SignupScreen = ({navigation}) => {
 
             <View style={styles.textPrivate}>
                 <Text style={styles.color_textPrivate}>
-                By registering, you confirm that you accept our{' '}
+                Al registrarte, confirmas que aceptas nuestros{' '}
                 </Text>
                 <TouchableOpacity onPress={() => alert('Terms Clicked!')}>
                 <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
-                    Terms of service
+                    Términos de Servicio
                 </Text>
                 </TouchableOpacity>
-                <Text style={styles.color_textPrivate}> and </Text>
+                <Text style={styles.color_textPrivate}> y </Text>
                 <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
-                Privacy Policy
+                Política de Privacidad
                 </Text>
             </View>
 
@@ -76,7 +76,7 @@ const SignupScreen = ({navigation}) => {
             {Platform.OS === 'android' ? (
                 <View>
                 <SocialButton
-                    buttonTitle="Sign In with Facebook"
+                    buttonTitle="Iniciar Sesión con Facebook"
                     btnType="facebook"
                     color="#4867aa"
                     backgroundColor="#e6eaf4"
@@ -84,7 +84,7 @@ const SignupScreen = ({navigation}) => {
                 />
 
                 <SocialButton
-                    buttonTitle="Sign In with Google"
+                    buttonTitle="Iniciar Sesión con Google"
                     btnType="google"
                     color="#de4d41"
                     backgroundColor="#f5e7ea"
@@ -97,7 +97,7 @@ const SignupScreen = ({navigation}) => {
                 style={styles.navButton}
                 onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.navButtonText}>
-                Have an acount? Sign In
+                ¿Ya tinenes una cuenta? Inicia Sesión
                 </Text>
             </TouchableOpacity>
         </View>
