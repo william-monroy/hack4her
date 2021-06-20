@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
-import 
+import {View, Text} from 'react-native'
 
 const HomeScreen = () => {
     return (
         <View>
-            
+            <Text>Home</Text>
         </View>
     )
 }
